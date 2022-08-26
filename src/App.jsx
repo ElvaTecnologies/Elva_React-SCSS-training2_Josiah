@@ -17,23 +17,25 @@ function App() {
           Try it free 7 days then $20/mo. thereafter
         </div>
         <div className="form-card">
-          <div className="input-div">
-            <input type="text" placeholder="First Name" />
-          </div>
-          <div className="input-div">
-            <input type="text" placeholder="Last Name" />
-          </div>
-          <div className="input-div">
-            <input type="email" placeholder="Email Address" />
-          </div>
-          <div className="input-div">
-            <input type="password" placeholder="Password" />
-          </div>
-          <button>Claim your free trial </button>
-          <sup>
-            By clicking the button, you are agreeing to our
-            <a href="#">Terms and Services</a>
-          </sup>
+          <form>
+            <div className="input-div">
+              <input type="text" placeholder="First Name" />
+            </div>
+            <div className="input-div">
+              <input type="text" placeholder="Last Name" />
+            </div>
+            <div className="input-div">
+              <input type="email" placeholder="Email Address" />
+            </div>
+            <div className="input-div">
+              <input type="password" placeholder="Password" />
+            </div>
+            <button>Claim your free trial </button>
+            <sup>
+              By clicking the button, you are agreeing to our
+              <a href="#">Terms and Services</a>
+            </sup>
+          </form>
         </div>
       </div>
       {/* </div> */}
