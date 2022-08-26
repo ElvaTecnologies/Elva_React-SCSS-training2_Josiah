@@ -11,9 +11,23 @@
   display: flex;
   .text-div {
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    h1 {
+      font-size: 40px;
+      width: 450px;
+    }
+    p {
+      width: 450px;
+      line-height: 25px;
+      font-size: 16px;
+    }
   }
   .form-div {
-    border: red solid 1px;
+    // border: red solid 1px;
     width: 50%;
     display: flex;
     justify-content: center;

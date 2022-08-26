@@ -4,7 +4,14 @@ function App() {
   return (
     <div className="App">
       {/* <div className="flexbox"> */}
-      <div className="text-div">text</div>
+      <div className="text-div">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
       <div className="form-div">
         <div className="top-card">
           Try it free 7 days then $20/mo. thereafter
@@ -24,8 +31,7 @@ function App() {
           </div>
           <button>Claim your free trial </button>
           <sup>
-            {" "}
-            By clicking the button, you are agreeing to our{" "}
+            By clicking the button, you are agreeing to our
             <a href="#">Terms and Services</a>
           </sup>
         </div>
