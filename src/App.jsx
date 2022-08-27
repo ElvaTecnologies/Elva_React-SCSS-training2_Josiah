@@ -3,23 +3,23 @@ import "./App.scss";
 import errorIcon from "./assets/image/icon-error.svg";
 
 function App() {
-  const [fnError, setFnError] = useState(false);
-  const [lnError, setLnError] = useState(false);
+  const [fnError, setFnError] = useState({ err: false, msg: "" });
+  const [lnError, setLnError] = useState({ err: false, msg: "" });
   const [eaError, setEaError] = useState({ err: false, msg: "" });
-  const [passError, setPassError] = useState(false);
+  const [passError, setPassError] = useState({ err: false, msg: "" });
   const handelSubmit = (e) => {
     e.preventDefault();
 
     let formElem = e.target;
 
     if (formElem[0].value === "") {
-      return setFnError(true);
+      return setFnError({ err: true, msg: "First Name cannot be empty" });
     }
-    setFnError(false);
+    setFnError({ err: false, msg: "" });
     if (formElem[1].value === "") {
-      return setLnError(true);
+      return setLnError({ err: true, msg: "Last Name cannot be empty" });
     }
-    setLnError(false);
+    setLnError({ err: false, msg: "" });
     if (formElem[2].value === "") {
       return setEaError({ err: true, msg: "Email cannot be empty" });
     } else {
@@ -35,9 +35,9 @@ function App() {
     }
     setEaError({ err: false, msg: "" });
     if (formElem[3].value === "") {
-      return setPassError(true);
+      return setPassError({ err: true, msg: "Password cannot be empty" });
     }
-    setPassError(false);
+    setPassError({ err: false, msg: "" });
   };
   return (
     <div className="App">
@@ -56,32 +56,26 @@ function App() {
         </div>
         <div className="form-card">
           <form onSubmit={(e) => handelSubmit(e)}>
-            <label className={`input-div ${fnError ? "error" : null}`}>
+            <label className={`input-div ${fnError.err ? "error" : null}`}>
               <input type="text" placeholder="First Name" />{" "}
-              {fnError ? <img src={errorIcon} alt="" /> : null}
+              {fnError.err ? <img src={errorIcon} alt="" /> : null}
             </label>
-            <sup className="error">
-              {fnError ? "First Name cannot be empty" : null}
-            </sup>
-            <label className={`input-div ${lnError ? "error" : null}`}>
+            <sup className="error">{fnError.err ? fnError.msg : null}</sup>
+            <label className={`input-div ${lnError.err ? "error" : null}`}>
               <input type="text" placeholder="Last Name" />
-              {lnError ? <img src={errorIcon} alt="" /> : null}
+              {lnError.err ? <img src={errorIcon} alt="" /> : null}
             </label>
-            <sup className="error">
-              {lnError ? "Last Name cannot be empty" : null}
-            </sup>
+            <sup className="error">{lnError.err ? lnError.msg : null}</sup>
             <label className={`input-div ${eaError.err ? "error" : null}`}>
               <input type="" placeholder="Email Address" />
               {eaError.err ? <img src={errorIcon} alt="" /> : null}
             </label>
             <sup className="error">{eaError.err ? eaError.msg : null}</sup>
-            <label className={`input-div ${passError ? "error" : null}`}>
+            <label className={`input-div ${passError.err ? "error" : null}`}>
               <input type="password" placeholder="Password" />
-              {passError ? <img src={errorIcon} alt="" /> : null}
+              {passError.err ? <img src={errorIcon} alt="" /> : null}
             </label>
-            <sup className="error">
-              {passError ? "Password cannot be empty" : null}
-            </sup>
+            <sup className="error">{passError.err ? passError.msg : null}</sup>
             <button>Claim your free trial </button>
             <sup>
               By clicking the button, you are agreeing to our
