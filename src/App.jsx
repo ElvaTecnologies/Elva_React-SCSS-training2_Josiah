@@ -1,6 +1,28 @@
 import "./App.scss";
+import errorIcon from "./assets/image/icon-error.svg";
 
 function App() {
+  const handelSubmit = (e) => {
+    e.preventDefault();
+
+    let formElem = e.target;
+
+    if (formElem[0].value === "") {
+      // formElem[0].style.border = "solid red 1px";
+      // formElem[0].parentElement.childNodes[1];
+      // setError(formElem[0]);
+      return console.log("");
+    }
+    if (formElem[1].value === "") {
+      return console.log("");
+    }
+    if (formElem[2].value === "") {
+      return console.log("");
+    }
+    if (formElem[3].value === "") {
+      return console.log("");
+    }
+  };
   return (
     <div className="App">
       {/* <div className="flexbox"> */}
@@ -17,19 +39,27 @@ function App() {
           Try it free 7 days then $20/mo. thereafter
         </div>
         <div className="form-card">
-          <form>
-            <div className="input-div">
-              <input type="text" placeholder="First Name" />
-            </div>
-            <div className="input-div">
+          <form onSubmit={(e) => handelSubmit(e)}>
+            <label className="input-div">
+              <input type="text" placeholder="First Name" />{" "}
+              <img src={errorIcon} alt="" />
+            </label>
+            <sup className="error">First Name cannot be empty</sup>
+            <label className="input-div">
               <input type="text" placeholder="Last Name" />
-            </div>
-            <div className="input-div">
+              <img src={errorIcon} alt="" />
+            </label>
+            <sup className="error">Last Name cannot be empty</sup>
+            <label className="input-div">
               <input type="email" placeholder="Email Address" />
-            </div>
-            <div className="input-div">
+              <img src={errorIcon} alt="" />
+            </label>
+            <sup className="error">Email cannot be empty</sup>
+            <label className="input-div">
               <input type="password" placeholder="Password" />
-            </div>
+              <img src={errorIcon} alt="" />
+            </label>
+            <sup className="error">Password cannot be empty</sup>
             <button>Claim your free trial </button>
             <sup>
               By clicking the button, you are agreeing to our
