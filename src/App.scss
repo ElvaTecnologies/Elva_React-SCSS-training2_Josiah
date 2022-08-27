@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 .App {
   margin: 0;
   box-sizing: border-box;
@@ -5,7 +6,7 @@
   background-color: hsl(0, 100%, 74%);
   height: 100vh;
   background-image: url("./assets/image/bg-intro-desktop.png");
-
+  font-family: "Poppins", sans-serif;
   // .flexbox {
   // border: solid 1px;
   display: flex;
@@ -19,6 +20,7 @@
     h1 {
       font-size: 40px;
       max-width: 450px;
+      font-weight: 600;
     }
     p {
       max-width: 450px;
@@ -37,7 +39,7 @@
     .top-card {
       background-color: hsl(248, 32%, 49%);
       color: #fff;
-      height: 70px;
+      height: 75px;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -54,7 +56,7 @@
       background-color: #fff;
       // width: 100%;
       padding: 30px 40px;
-      height: 330px;
+      height: 350px;
       border-radius: 10px;
       box-shadow: 1px 3px 2px #00000087;
       .input-div {
