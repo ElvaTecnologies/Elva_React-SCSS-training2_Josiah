@@ -2,13 +2,10 @@
 .App {
   margin: 0;
   box-sizing: border-box;
-  // border: solid 1px;
   background-color: hsl(0, 100%, 74%);
   height: 100vh;
   background-image: url("./assets/image/bg-intro-desktop.png");
   font-family: "Poppins", sans-serif;
-  // .flexbox {
-  // border: solid 1px;
   display: flex;
   .text-div {
     width: 50%;
@@ -29,7 +26,6 @@
     }
   }
   .form-div {
-    // border: red solid 1px;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -54,7 +50,6 @@
     .form-card {
       max-width: 360px;
       background-color: #fff;
-      // width: 100%;
       padding: 30px 40px;
       height: 350px;
       border-radius: 10px;
@@ -65,12 +60,9 @@
         align-items: center;
         width: 100%;
         border: solid #ddd 1px;
-        // border: solid 1px;
-        // margin: 15px 0;
         padding: 0;
         input {
           width: 100%;
-          // border: solid red 1px;
           border-radius: 5px;
           margin: 0 auto;
           height: 40px;
@@ -89,10 +81,8 @@
       }
       .error {
         color: red;
-        // border: solid;
         font-size: 10px;
         text-align: right;
-        // padding: 0 0 10px 0;
       }
       button {
         border-radius: 5px;
@@ -119,7 +109,6 @@
       }
     }
   }
-  // }
 
   @media (max-width: 768px) {
     flex-wrap: wrap;

@@ -41,7 +41,6 @@ function App() {
   };
   return (
     <div className="App">
-      {/* <div className="flexbox"> */}
       <div className="text-div">
         <h1>Learn to code by watching others</h1>
         <p>
@@ -84,7 +83,6 @@ function App() {
           </form>
         </div>
       </div>
-      {/* </div> */}
     </div>
   );
 }
