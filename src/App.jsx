@@ -1,27 +1,33 @@
+import { useState } from "react";
 import "./App.scss";
 import errorIcon from "./assets/image/icon-error.svg";
 
 function App() {
+  const [fnError, setFnError] = useState(false);
+  const [lnError, setLnError] = useState(false);
+  const [eaError, setEaError] = useState(false);
+  const [passError, setPassError] = useState(false);
   const handelSubmit = (e) => {
     e.preventDefault();
 
     let formElem = e.target;
 
     if (formElem[0].value === "") {
-      // formElem[0].style.border = "solid red 1px";
-      // formElem[0].parentElement.childNodes[1];
-      // setError(formElem[0]);
-      return console.log("");
+      return setFnError(true);
     }
+    setFnError(false);
     if (formElem[1].value === "") {
-      return console.log("");
+      return setLnError(true);
     }
+    setLnError(false);
     if (formElem[2].value === "") {
-      return console.log("");
+      return setEaError(true);
     }
+    setEaError(false);
     if (formElem[3].value === "") {
-      return console.log("");
+      return setPassError(true);
     }
+    setPassError(false);
   };
   return (
     <div className="App">
@@ -40,26 +46,34 @@ function App() {
         </div>
         <div className="form-card">
           <form onSubmit={(e) => handelSubmit(e)}>
-            <label className="input-div">
+            <label className={`input-div ${fnError ? "error" : null}`}>
               <input type="text" placeholder="First Name" />{" "}
-              <img src={errorIcon} alt="" />
+              {fnError ? <img src={errorIcon} alt="" /> : null}
             </label>
-            <sup className="error">First Name cannot be empty</sup>
-            <label className="input-div">
+            <sup className="error">
+              {fnError ? "First Name cannot be empty" : null}
+            </sup>
+            <label className={`input-div ${lnError ? "error" : null}`}>
               <input type="text" placeholder="Last Name" />
-              <img src={errorIcon} alt="" />
+              {lnError ? <img src={errorIcon} alt="" /> : null}
             </label>
-            <sup className="error">Last Name cannot be empty</sup>
-            <label className="input-div">
+            <sup className="error">
+              {lnError ? "Last Name cannot be empty" : null}
+            </sup>
+            <label className={`input-div ${eaError ? "error" : null}`}>
               <input type="email" placeholder="Email Address" />
-              <img src={errorIcon} alt="" />
+              {eaError ? <img src={errorIcon} alt="" /> : null}
             </label>
-            <sup className="error">Email cannot be empty</sup>
-            <label className="input-div">
+            <sup className="error">
+              {eaError ? "Email cannot be empty" : null}
+            </sup>
+            <label className={`input-div ${passError ? "error" : null}`}>
               <input type="password" placeholder="Password" />
-              <img src={errorIcon} alt="" />
+              {passError ? <img src={errorIcon} alt="" /> : null}
             </label>
-            <sup className="error">Password cannot be empty</sup>
+            <sup className="error">
+              {passError ? "Password cannot be empty" : null}
+            </sup>
             <button>Claim your free trial </button>
             <sup>
               By clicking the button, you are agreeing to our

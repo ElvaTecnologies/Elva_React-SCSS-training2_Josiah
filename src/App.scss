@@ -82,12 +82,15 @@
           margin: 0 10px 0 0;
         }
       }
+      .input-div.error {
+        border: solid 1px red;
+      }
       .error {
         color: red;
         // border: solid;
         font-size: 10px;
         text-align: right;
-        padding: 0 0 10px 0;
+        // padding: 0 0 10px 0;
       }
       button {
         border-radius: 5px;
