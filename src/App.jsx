@@ -5,7 +5,7 @@ import errorIcon from "./assets/image/icon-error.svg";
 function App() {
   const [fnError, setFnError] = useState(false);
   const [lnError, setLnError] = useState(false);
-  const [eaError, setEaError] = useState(false);
+  const [eaError, setEaError] = useState({ err: false, msg: "" });
   const [passError, setPassError] = useState(false);
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -21,9 +21,19 @@ function App() {
     }
     setLnError(false);
     if (formElem[2].value === "") {
-      return setEaError(true);
+      return setEaError({ err: true, msg: "Email cannot be empty" });
+    } else {
+      if (
+        formElem[2].value.lastIndexOf("@") < 0 ||
+        formElem[2].value.lastIndexOf(".") < 0
+      ) {
+        return setEaError({
+          err: true,
+          msg: "Looks like this is not an email",
+        });
+      }
     }
-    setEaError(false);
+    setEaError({ err: false, msg: "" });
     if (formElem[3].value === "") {
       return setPassError(true);
     }
@@ -60,13 +70,11 @@ function App() {
             <sup className="error">
               {lnError ? "Last Name cannot be empty" : null}
             </sup>
-            <label className={`input-div ${eaError ? "error" : null}`}>
-              <input type="email" placeholder="Email Address" />
-              {eaError ? <img src={errorIcon} alt="" /> : null}
+            <label className={`input-div ${eaError.err ? "error" : null}`}>
+              <input type="" placeholder="Email Address" />
+              {eaError.err ? <img src={errorIcon} alt="" /> : null}
             </label>
-            <sup className="error">
-              {eaError ? "Email cannot be empty" : null}
-            </sup>
+            <sup className="error">{eaError.err ? eaError.msg : null}</sup>
             <label className={`input-div ${passError ? "error" : null}`}>
               <input type="password" placeholder="Password" />
               {passError ? <img src={errorIcon} alt="" /> : null}
