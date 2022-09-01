@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+.App {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: hsl(0, 100%, 74%);
+  height: 100vh;
+  background-image: url("./assets/image/bg-intro-desktop.png");
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  .text-div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    h1 {
+      font-size: 40px;
+      max-width: 450px;
+      font-weight: 600;
+    }
+    p {
+      max-width: 450px;
+      line-height: 25px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    height: 100%;
+    // .form-div {
+    //   padding-bottom: 40px;
+    // }
+    .text-div {
+      height: 300px;
+
+      text-align: center;
+      h1 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+    .text-div {
+      // .form-div {
+      width: 100%;
+    }
+    @media (max-width: 425px) {
+      padding: 0 20px;
+      .text-div {
+        h1 {
+          font-size: 30px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      // .form-div {
+      //   .form-card {
+      //     padding: 20px;
+      //   }
+      // }
+    }
+  }
+  @media (max-width: 375px) {
+    background-image: url("./assets/image/bg-intro-mobile.png");
+  }
+}
