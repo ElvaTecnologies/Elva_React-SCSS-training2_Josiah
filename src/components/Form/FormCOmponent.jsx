@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import "./FormCOmponent.scss";
@@ -54,7 +54,7 @@ function FormCOmponent() {
               </Form>
               <sup>
                 By clicking the button, you are agreeing to our
-                <a href="#">Terms and Services</a>
+                <a href="/">Terms and Services</a>
               </sup>
             </>
           )}
